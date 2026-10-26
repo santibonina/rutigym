@@ -1,0 +1,157 @@
+/* Estilos compartidos por las páginas de pecho, espalda, piernas y brazos. */
+/* Tarjetas informativas de ejercicios y datos del grupo muscular. */
+.ejercicio-card {
+    background: linear-gradient(135deg, rgba(26, 31, 46, 0.9) 0%, rgba(36, 42, 57, 0.9) 100%);
+    padding: 25px;
+    margin: 20px;
+    border-radius: 12px;
+    border-left: 5px solid #e63946;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.ejercicio-card h3 {
+    color: #2dd36f;
+    text-align: left;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.ejercicio-card p {
+    color: #b8c5d6;
+    text-align: left;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.musculo-info {
+    color: #e63946;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rutinas-section {
+    display: none;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 900px;
+    background: linear-gradient(135deg, rgba(26, 31, 46, 0.95) 0%, rgba(36, 42, 57, 0.95) 100%);
+    border: 1px solid rgba(230, 57, 70, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.rutinas-section:target {
+    display: block;
+}
+
+.rutinas-section h2 {
+    color: #e63946;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.rutinas-opciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.btn-rutina {
+    display: inline-block;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, #e63946 0%, #d62828 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-rutina:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(230, 57, 70, 0.5);
+}
+
+.btn-volver {
+    background: linear-gradient(135deg, #2dd36f 0%, #22a854 100%);
+    box-shadow: 0 4px 15px rgba(45, 211, 111, 0.3);
+}
+
+.btn-volver:hover {
+    box-shadow: 0 8px 25px rgba(45, 211, 111, 0.5);
+}
+
+.rutina-contenido {
+    background: rgba(230, 57, 70, 0.05);
+    padding: 25px;
+    border-left: 4px solid #2dd36f;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.rutina-contenido h3 {
+    color: #2dd36f;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.ejercicio-rutina {
+    background: rgba(26, 31, 46, 0.5);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border-left: 3px solid #e63946;
+}
+
+.ejercicio-rutina strong {
+    color: #e63946;
+}
+
+.serie-info {
+    color: #2dd36f;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Presentación de cada guía muscular y sus enlaces a rutinas. */
+/* Reglas que sustituyen estilos escritos directamente en el HTML. */
+.hero {
+    width: min(1000px, calc(100% - 40px));
+    margin: 50px auto 40px;
+    padding: 32px 28px;
+    text-align: center;
+}
+
+.hero h2 {
+    margin: 0 auto 16px;
+    text-align: center;
+}
+
+.hero p {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: justify;
+    text-align-last: center;
+}
+
+.cta-box { text-align: center; margin-top: 40px; padding: 30px; background: rgba(230, 57, 70, 0.1); border-radius: 10px; margin: 40px 20px; }
+.cta-title { color: #e63946; margin-bottom: 15px; }
+.cta-text { color: #b8c5d6; margin-bottom: 20px; }

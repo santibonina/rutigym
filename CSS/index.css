@@ -1,0 +1,728 @@
+/* Estilos de la portada: hero, secciones informativas, tarjetas y rutina destacada. */
+
+/* Portada principal y llamados a explorar el sitio. */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: min(680px, calc(100svh - 180px));
+    padding: 148px 24px 94px;
+    margin-top: -90px;
+    background-image: linear-gradient(90deg, rgba(15, 20, 25, 0.94) 0%, rgba(15, 20, 25, 0.76) 52%, rgba(15, 20, 25, 0.32) 100%), url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=85");
+    background-position: center 55%;
+    background-size: cover;
+    color: white;
+}
+
+.hero-content {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    animation: home-arrive 650ms ease-out both;
+}
+
+.hero-eyebrow,
+.home-eyebrow {
+    color: #2dd36f;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero-eyebrow {
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 760px;
+    margin: 0 0 18px;
+    text-align: left;
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 1.1;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    max-width: 610px;
+    margin: 0 0 28px;
+    color: #e0e5e8;
+    font-size: 17px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.hero-buttons a {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    border: 1px solid #e63946;
+    border-radius: 6px;
+    background: #e63946;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.hero-buttons a:hover {
+    transform: translateY(-3px);
+    background: #d62828;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.hero-buttons .hero-button-secondary {
+    border-color: rgba(255, 255, 255, 0.55);
+    background: rgba(15, 20, 25, 0.38);
+}
+
+.hero-buttons .hero-button-secondary:hover {
+    border-color: #2dd36f;
+    background: rgba(26, 31, 46, 0.9);
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transform: translateX(-50%);
+    color: #dbe2e5;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.hero-scroll span {
+    color: #2dd36f;
+    font-size: 17px;
+}
+
+/* Tarjetas de acceso a rutinas, guías musculares y búsqueda de gimnasios. */
+.explora-section {
+    width: min(1200px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 56px 0 64px;
+    scroll-margin-top: 100px;
+}
+
+.home-section-heading {
+    max-width: 620px;
+    margin-bottom: 26px;
+}
+
+.home-section-heading h2,
+.sobre-nosotros h2 {
+    margin: 7px 0 8px;
+    color: #ffffff;
+    text-align: left;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.home-section-heading > p:last-child,
+.sobre-nosotros-content > p,
+.sobre-nosotros-values p {
+    color: #b8c5d6;
+    font-size: 14px;
+}
+
+.explora-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.explora-link {
+    position: relative;
+    display: block;
+    min-height: 162px;
+    padding: 20px;
+    border: 1px solid rgba(184, 197, 214, 0.16);
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(26, 31, 46, 0.94), rgba(36, 42, 57, 0.9));
+    color: #ffffff;
+    text-decoration: none;
+    transition: border-color 180ms ease, transform 180ms ease, background-color 180ms ease;
+}
+
+.explora-link:hover {
+    transform: translateY(-3px);
+    border-color: rgba(45, 211, 111, 0.65);
+    background: linear-gradient(135deg, rgba(36, 42, 57, 0.98), rgba(26, 31, 46, 0.98));
+}
+
+.explora-number {
+    display: block;
+    margin-bottom: 20px;
+    color: #2dd36f;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.explora-link h3 {
+    margin: 0 28px 5px 0;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: none;
+}
+
+.explora-link p {
+    max-width: 260px;
+    margin: 0 20px 0 0;
+    color: #b8c5d6;
+    font-size: 12px;
+}
+
+.explora-arrow {
+    position: absolute;
+    right: 18px;
+    bottom: 17px;
+    color: #e63946;
+    font-size: 18px;
+}
+
+/* Presentación del proyecto y sus características principales. */
+.sobre-nosotros {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 22px 56px;
+    padding: 56px max(24px, calc((100% - 1200px) / 2));
+    border-top: 1px solid rgba(184, 197, 214, 0.14);
+    border-bottom: 1px solid rgba(184, 197, 214, 0.14);
+    background: rgba(26, 31, 46, 0.7);
+    scroll-margin-top: 100px;
+}
+
+.sobre-nosotros h2 {
+    max-width: 450px;
+    margin-top: 8px;
+    font-size: 32px;
+}
+
+.sobre-nosotros-content > p {
+    margin: 0 0 14px;
+    line-height: 1.8;
+}
+
+.sobre-nosotros-content > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    color: #2dd36f;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.sobre-nosotros-content > a:hover {
+    color: #ffffff;
+}
+
+.sobre-nosotros-values {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 10px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(184, 197, 214, 0.14);
+}
+
+.sobre-nosotros-values h3 {
+    margin: 0 0 5px;
+    color: #2dd36f;
+    font-size: 14px;
+    text-transform: none;
+}
+
+.sobre-nosotros-values p {
+    margin: 0;
+    font-size: 12px;
+}
+
+@keyframes home-arrive {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Reorganiza la portada para tabletas. */
+@media (max-width: 760px) {
+    .hero {
+        min-height: min(620px, calc(100svh - 140px));
+        padding: 142px 24px 86px;
+        background-position: 62% center;
+    }
+
+    .hero h1 {
+        max-width: 560px;
+        font-size: 40px;
+    }
+
+    .hero p {
+        max-width: 520px;
+        font-size: 15px;
+    }
+
+    .explora-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sobre-nosotros {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 44px 24px;
+    }
+
+    .sobre-nosotros-values {
+        grid-column: auto;
+    }
+}
+
+/* Ajustes de portada para celulares. */
+@media (max-width: 480px) {
+    .hero {
+        min-height: min(600px, calc(100svh - 120px));
+        padding-right: 20px;
+        padding-left: 20px;
+        background-position: 58% center;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+        max-width: 320px;
+    }
+
+    .explora-section {
+        width: calc(100% - 36px);
+        padding: 42px 0 48px;
+    }
+
+    .explora-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .explora-link {
+        min-height: 142px;
+    }
+
+    .sobre-nosotros-values {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-content {
+        animation: none;
+    }
+
+    .explora-link,
+    .hero-buttons a {
+        transition: none;
+    }
+}
+
+/* Estilos de componentes generales reutilizables en secciones y tarjetas. */
+.seccion {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seccion h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.card {
+    background: linear-gradient(135deg, rgba(26, 31, 46, 0.9) 0%, rgba(36, 42, 57, 0.9) 100%);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(230, 57, 70, 0.2);
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #e63946;
+    box-shadow: 0 12px 40px rgba(230, 57, 70, 0.3);
+}
+
+.card-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #2dd36f;
+    font-weight: 700;
+}
+
+.card p {
+    color: #b8c5d6;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.card a {
+    display: inline-block;
+    padding: 10px 25px;
+    background: linear-gradient(135deg, #e63946 0%, #d62828 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.card a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+}
+
+.beneficios {
+    background: rgba(45, 211, 111, 0.05);
+    padding: 50px 30px;
+    border-radius: 15px;
+    border-left: 5px solid #2dd36f;
+    margin: 40px 0;
+}
+
+.beneficios h3 {
+    color: #2dd36f;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.beneficios ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.beneficios li {
+    color: #b8c5d6;
+    padding-left: 30px;
+    position: relative;
+    font-size: 16px;
+}
+
+.beneficios li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2dd36f;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+    text-align: center;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, rgba(45, 211, 111, 0.1) 0%, rgba(230, 57, 70, 0.1) 100%);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(230, 57, 70, 0.2);
+}
+
+.stat-number {
+    font-size: 42px;
+    font-weight: 800;
+    color: #e63946;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    color: #b8c5d6;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-section {
+    background: linear-gradient(135deg, rgba(230, 57, 70, 0.2) 0%, rgba(45, 211, 111, 0.1) 100%);
+    padding: 60px 30px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.cta-section h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.cta-section p {
+    color: #b8c5d6;
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 16px 48px;
+    background: linear-gradient(135deg, #e63946 0%, #d62828 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(230, 57, 70, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(230, 57, 70, 0.4);
+}
+
+/* Resumen de grupos musculares y vista previa de la rutina semanal. */
+.muscle-overview {
+    display: grid;
+    width: min(1200px, calc(100% - 48px));
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    align-items: start;
+    gap: 44px;
+    margin: 0 auto;
+    padding: 58px 0;
+    border-top: 1px solid rgba(184, 197, 214, 0.14);
+}
+
+.muscle-overview-heading h2,
+.week-preview h2 {
+    margin: 7px 0 10px;
+    color: #ffffff;
+    text-align: left;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.muscle-overview-heading > p:last-child,
+.week-preview-heading > div > p:last-child {
+    margin: 0;
+    color: #b8c5d6;
+    font-size: 14px;
+}
+
+.muscle-link-list {
+    border-top: 1px solid rgba(184, 197, 214, 0.18);
+}
+
+.muscle-link-list > a {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr) 24px;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 4px;
+    border-bottom: 1px solid rgba(184, 197, 214, 0.18);
+    color: #ffffff;
+    text-decoration: none;
+    transition: padding 160ms ease, background-color 160ms ease;
+}
+
+.muscle-link-list > a:hover {
+    padding-right: 10px;
+    padding-left: 10px;
+    background: rgba(45, 211, 111, 0.05);
+}
+
+.muscle-link-number {
+    color: #e63946;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.muscle-link-copy strong,
+.muscle-link-copy small {
+    display: block;
+}
+
+.muscle-link-copy strong {
+    font-size: 14px;
+}
+
+.muscle-link-copy small {
+    margin-top: 2px;
+    color: #b8c5d6;
+    font-size: 11px;
+}
+
+.muscle-link-arrow {
+    color: #2dd36f;
+    font-size: 17px;
+    text-align: right;
+}
+
+.week-preview {
+    width: min(1200px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 12px 0 64px;
+}
+
+.week-preview-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.week-preview-heading > div {
+    max-width: 620px;
+}
+
+.week-preview h2 {
+    margin-bottom: 7px;
+}
+
+.week-preview-heading > a {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #e63946;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.week-preview-heading > a span {
+    color: #2dd36f;
+}
+
+.week-days {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.week-day {
+    min-height: 150px;
+    padding: 18px 20px;
+    border-left: 3px solid #e63946;
+    border-radius: 6px;
+    background: linear-gradient(135deg, rgba(26, 31, 46, 0.94), rgba(36, 42, 57, 0.9));
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.week-day:hover,
+html.has-scroll-reveal .week-day[data-scroll-reveal]:hover,
+html.has-scroll-reveal .week-day[data-scroll-reveal].is-visible:hover {
+    transform: translateY(-4px);
+    border-left-color: #2dd36f;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28), 0 0 18px rgba(45, 211, 111, 0.12);
+}
+
+.week-day:active {
+    transform: translateY(-1px) scale(0.99);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .week-day {
+        transition: none;
+    }
+}
+
+.week-day > span {
+    color: #2dd36f;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.week-day h3 {
+    margin: 16px 0 5px;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: none;
+}
+
+.week-day p {
+    margin: 0;
+    color: #b8c5d6;
+    font-size: 12px;
+}
+
+@media (max-width: 760px) {
+    .muscle-overview {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 44px 0;
+    }
+
+    .week-preview-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .muscle-overview,
+    .week-preview {
+        width: calc(100% - 36px);
+    }
+
+    .week-preview {
+        padding-bottom: 48px;
+    }
+
+    .week-days {
+        grid-template-columns: 1fr;
+    }
+
+    .week-day {
+        min-height: 130px;
+    }
+}

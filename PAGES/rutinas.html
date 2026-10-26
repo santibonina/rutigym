@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/estilos.css">
+    <link rel="stylesheet" href="../CSS/rutinas.css">
+    <title>Mis Rutinas - RutiGym</title>
+</head>
+<body>
+
+    <!-- Menú lateral para navegar entre las secciones del sitio. -->
+    <!-- Los enlaces con distintos valores de días identifican la rutina solicitada. -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-btn">☰</label>
+    <label for="menu-toggle" class="overlay"></label>
+
+    <div class="sidebar">
+        <h3>Navegación</h3>
+        <a href="../index.html">🏠 Inicio</a>
+
+        <h3>Músculos</h3>
+        <a href="musculos/pecho.html">Pecho</a>
+        <a href="musculos/espalda.html">Espalda</a>
+        <a href="musculos/piernas.html">Piernas</a>
+        <a href="musculos/brazos.html">Brazos</a>
+
+        <h3>Rutinas</h3>
+        <input type="checkbox" id="rutinas-toggle" class="rutinas-toggle">
+        <label for="rutinas-toggle" class="rutinas-btn">📋 Ver Rutinas</label>
+        <div class="rutinas-submenu">
+            <a href="rutinas.html?dias=2" class="rutina-duracion" data-dias="2">2 Días</a>
+            <a href="rutinas.html?dias=3" class="rutina-duracion" data-dias="3">3 Días</a>
+            <a href="rutinas.html?dias=4" class="rutina-duracion" data-dias="4">4 Días</a>
+            <a href="rutinas.html?dias=5" class="rutina-duracion" data-dias="5">5 Días</a>
+        </div>
+
+        <h3>Gimnasios</h3>
+        <a href="gimnasio.html">Ver gimnasios</a>
+    </div>
+
+    <!-- ICONO DE USUARIO -->
+    <div class="usuario">
+        👤
+        <div class="menu-usuario" id="menu">
+            <a href="iniciosesion.html">Iniciar Sesión</a>
+            <a href="registro.html">Registrarse</a>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <div class="nav">
+        <h1><a href="../../index.html" style="text-decoration: none; color: inherit;">RUTIGYM</a></h1>
+    </div>
+    <hr>
+
+    <!-- Estructura donde se muestra el título y se espera el contenido de la rutina. -->
+    <div class="rutina-container">
+        <div class="rutina-header" id="rutina-header">
+            <h1>Rutina de Entrenamiento</h1>
+            <p>Cargando información...</p>
+        </div>
+
+        <div class="rutina-dias" id="rutina-container">
+            <!-- Contenedor reservado para las tarjetas de cada día de entrenamiento. -->
+        </div>
+
+        <a href="../index.html" class="volver-btn">← Volver al Inicio</a>
+    </div>
+
+    <!-- Pie de página y scripts compartidos de esta página. -->
+    <footer id="site-footer"></footer>
+    <script src="../JS/footer.js"></script>
+    <script src="../JS/reveal-scroll.js"></script>
+    <script src="../JS/menu-usuario.js"></script>
+</body>
+</html>

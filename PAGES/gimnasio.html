@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gimnasios</title>
+
+    <link rel="stylesheet" href="../CSS/estilos.css">
+    <link rel="stylesheet" href="../CSS/gimnasio.css">
+</head>
+<body>
+
+    <!-- Menú de navegación lateral, desplegado mediante el checkbox y CSS. -->
+    <input type="checkbox" id="menu-toggle">
+
+    <label for="menu-toggle" class="menu-btn">☰</label>
+
+    <label for="menu-toggle" class="overlay"></label>
+
+    <div class="sidebar">
+
+        <h3>Navegación</h3>
+
+        <a href="../index.html">🏠 Inicio</a>
+
+        <h3>Músculos</h3>
+
+        <a href="../PAGES/musculos/pecho.html">Pecho</a>
+        <a href="../PAGES/musculos/espalda.html">Espalda</a>
+        <a href="../PAGES/musculos/piernas.html">Piernas</a>
+        <a href="../PAGES/musculos/brazos.html">Brazos</a>
+
+        <h3>Rutinas</h3>
+        <input type="checkbox" id="rutinas-toggle" class="rutinas-toggle">
+        <label for="rutinas-toggle" class="rutinas-btn">📋 Ver Rutinas</label>
+        <div class="rutinas-submenu">
+            <a href="rutinas-2dias.html" class="rutina-duracion">2 Días</a>
+            <a href="rutinas-3dias.html" class="rutina-duracion">3 Días</a>
+            <a href="rutinas-4dias.html" class="rutina-duracion">4 Días</a>
+            <a href="rutinas-5dias.html" class="rutina-duracion">5 Días</a>
+        </div>
+
+        <h3>Gimnasios</h3>
+
+        <a href="gimnasio.html">Ver gimnasios</a>
+
+    </div>
+<!-- ICONO DE USUARIO -->
+<div class="usuario">
+    👤
+    <div class="menu-usuario" id="menu">
+        <a href="iniciosesion.html">Iniciar Sesión</a>
+        <a href="registro.html">Registrarse</a>
+    </div>
+</div>
+
+<!-- HEADER -->
+<div class="nav">
+    <h1><a href="../../index.html" style="text-decoration: none; color: inherit;">RUTIGYM</a></h1>
+</div>
+   
+
+    <!-- Buscador de gimnasios: combina el mapa, la búsqueda y los resultados. -->
+    <main class="gimnasios-page">
+        <header class="gimnasios-header">
+            <p class="gimnasios-eyebrow">ENCONTRÁ TU PRÓXIMO ENTRENAMIENTO</p>
+            <h1>Gimnasios en Buenos Aires</h1>
+            
+        </header>
+
+        <section class="gimnasios-explorer" aria-label="Buscar gimnasios y verlos en el mapa">
+            <div class="map-panel">
+                <iframe
+                    src="https://maps.google.com/maps?q=gimnasios+buenos+aires&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                    title="Mapa de gimnasios en Buenos Aires"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+
+            <div class="places-panel">
+                <h2>Explorar gimnasios</h2>
+                <form class="gym-search" id="gym-search-form">
+                    <label for="gym-query">Zona o nombre</label>
+                    <div class="search-row">
+                        <input id="gym-query" type="search" placeholder="Ej.: gimnasios en Ramos Mejía" required>
+                        <button type="submit" aria-label="Buscar gimnasios">Buscar</button>
+                    </div>
+                </form>
+
+                <p class="results-label">Búsquedas populares</p>
+                <ul class="gym-results">
+                    <li>
+                        <span class="result-icon" aria-hidden="true">01</span>
+                        <div>
+                            <h3>Gimnasios en Palermo</h3>
+                            <p>Ver resultados en esta zona</p>
+                        </div>
+                        <button class="gym-result-select" type="button" data-query="Gimnasios en Palermo, Buenos Aires" aria-label="Buscar gimnasios en Palermo">↗</button>
+                    </li>
+                    <li>
+                        <span class="result-icon" aria-hidden="true">02</span>
+                        <div>
+                            <h3>Gimnasios en Caballito</h3>
+                            <p>Ver resultados en esta zona</p>
+                        </div>
+                        <button class="gym-result-select" type="button" data-query="Gimnasios en Caballito, Buenos Aires" aria-label="Buscar gimnasios en Caballito">↗</button>
+                    </li>
+                    <li>
+                        <span class="result-icon" aria-hidden="true">03</span>
+                        <div>
+                            <h3>Gimnasios en Ramos Mejía</h3>
+                            <p>Ver resultados en esta zona</p>
+                        </div>
+                        <button class="gym-result-select" type="button" data-query="Gimnasios en Ramos Mejía, Buenos Aires" aria-label="Buscar gimnasios en Ramos Mejía">↗</button>
+                    </li>
+                    <li>
+                        <span class="result-icon" aria-hidden="true">04</span>
+                        <div>
+                            <h3>Gimnasios en Microcentro</h3>
+                            <p>Ver resultados en esta zona</p>
+                        </div>
+                        <button class="gym-result-select" type="button" data-query="Gimnasios en Microcentro, Buenos Aires" aria-label="Buscar gimnasios en Microcentro">↗</button>
+                    </li>
+                </ul>
+
+                <p class="results-label" id="results-heading">Resultados</p>
+                <p class="search-status" id="search-status" role="status" aria-live="polite">Buscá una zona para ver gimnasios, horarios y reseñas acá.</p>
+                <ul class="place-results" id="place-results" aria-label="Gimnasios encontrados"></ul>
+
+                <p class="maps-note">Resultados y reseñas provistos por Google Maps.</p>
+            </div>
+        </section>
+    </main>
+    <!-- Scripts del pie compartido, las animaciones y la búsqueda de gimnasios. -->
+    <footer id="site-footer"></footer>
+    <script src="../JS/footer.js"></script>
+    <script src="../JS/reveal-scroll.js"></script>
+    <script src="../JS/gimnasios.js"></script>
+    <script src="../JS/menu-usuario.js"></script>
+    
+</body>
+</html>

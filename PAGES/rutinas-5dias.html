@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/estilos.css">
+    <link rel="stylesheet" href="../CSS/rutinas.css">
+    <title>Rutina 5 Días - RutiGym</title>
+</head>
+<body>
+
+    <!-- Menú lateral para navegar entre las páginas del sitio. -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-btn">☰</label>
+    <label for="menu-toggle" class="overlay"></label>
+
+    <div class="sidebar">
+        <h3>Navegación</h3>
+        <a href="../index.html">🏠 Inicio</a>
+
+        <h3>Músculos</h3>
+        <a href="musculos/pecho.html">Pecho</a>
+        <a href="musculos/espalda.html">Espalda</a>
+        <a href="musculos/piernas.html">Piernas</a>
+        <a href="musculos/brazos.html">Brazos</a>
+
+        <h3>Rutinas</h3>
+        <input type="checkbox" id="rutinas-toggle" class="rutinas-toggle">
+        <label for="rutinas-toggle" class="rutinas-btn">📋 Ver Rutinas</label>
+        <div class="rutinas-submenu">
+            <a href="rutinas-2dias.html" class="rutina-duracion">2 Días</a>
+            <a href="rutinas-3dias.html" class="rutina-duracion">3 Días</a>
+            <a href="rutinas-4dias.html" class="rutina-duracion">4 Días</a>
+            <a href="rutinas-5dias.html" class="rutina-duracion">5 Días</a>
+        </div>
+
+        <h3>Gimnasios</h3>
+        <a href="gimnasio.html">Ver gimnasios</a>
+    </div>
+
+    <!-- ICONO DE USUARIO -->
+    <div class="usuario">
+        👤
+        <div class="menu-usuario" id="menu">
+            <a href="iniciosesion.html">Iniciar Sesión</a>
+            <a href="registro.html">Registrarse</a>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <div class="nav">
+        <h1><a href="../../index.html" style="text-decoration: none; color: inherit;">RUTIGYM</a></h1>
+    </div>
+    <hr>
+
+    <!-- Rutina de cinco días, organizada en tarjetas con ejercicios y descansos. -->
+    <div class="rutina-container">
+        <div class="rutina-header">
+            <h1>Rutina de 5 Días</h1>
+            <p>Programa de entrenamiento completo en 5 días</p>
+        </div>
+
+        <div class="rutina-dias">
+            <div class="dia-card">
+                <h2>Día 1: Pecho y Bíceps</h2>
+                
+                <div class="ejercicio-item">
+                    <div class="ejercicio-item__details">
+                        <h3>Press de Banca</h3>
+                        <p><strong>Series:</strong> 4</p>
+                        <p><strong>Repeticiones:</strong> 6-8</p>
+                        <p><strong>Descanso:</strong> 2-3 min</p>
+                        <span class="info-badge">💪 Ejercicio</span>
+                    </div>
+                    <img class="ejercicio-imagen" src="../IMG/tecnicas/press-banca-con-barra.webp" alt="Press de banca con barra" loading="lazy" width="490" height="450">
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>Aperturas con Mancuernas</h3>
+                    <p><strong>Series:</strong> 3</p>
+                    <p><strong>Repeticiones:</strong> 8-10</p>
+                    <p><strong>Descanso:</strong> 1-2 min</p>
+                    <span class="info-badge">💪 Ejercicio</span>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>Curl de Bíceps</h3>
+                    <p><strong>Series:</strong> 3</p>
+                    <p><strong>Repeticiones:</strong> 8-10</p>
+                    <p><strong>Descanso:</strong> 1 min</p>
+                    <span class="info-badge">💪 Ejercicio</span>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>Curl Martillo</h3>
+                    <p><strong>Series:</strong> 3</p>
+                    <p><strong>Repeticiones:</strong> 8-10</p>
+                    <p><strong>Descanso:</strong> 1 min</p>
+                    <span class="info-badge">💪 Ejercicio</span>
+                </div>
+
+                <div class="descanso">☀️ Día de Descanso</div>
+            </div>
+
+            <div class="dia-card">
+                <h2>Día 2: Espalda y Tríceps</h2>
+                
+                <div class="ejercicio-item">
+                    <h3>Remo con Barra</h3>
+                    <p><strong>Series:</strong> 4</p>
+                    <p><strong>Repeticiones:</strong> 6-8</p>
+                    <p><strong>Descanso:</strong> 2-3 min</p>
+                    <span class="info-badge">💪 Ejercicio</span>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>Jalón Lat</h3>
+                    <p><strong>Series:</strong> 3</p>
+                    <p><strong>Repeticiones:</strong> 8-10</p>
+                    <p><strong>Descanso:</strong> 1-2 min</p>
+                    <span class="info-badge">💪 Ejercicio</span>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>Extensión de Tríceps</h3>
+                    <p><strong>Series:</strong> 3</p>
+                    <p><strong>Repeticiones:</strong> 8-10</p>
+                    <p><strong>Descanso:</strong> 1 min</p>
+                    <span class="info-badge">💪 Ejercicio</span>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>Fondos en Barras</h3>
+                    <p><strong>Series:</strong> 3</p>
+                    <p><strong>Repeticiones:</strong> 6-10</p>
+                    <p><strong>Descanso:</strong> 1-2 min</p>
+                    <span class="info-badge">💪 Ejercicio</span>
+                </div>
+
+                <div class="descanso">☀️ Día de Descanso</div>
+            </div>
+
+            <div class="dia-card">
+                <h2>Día 3: Piernas y Hombros</h2>
+                
+                <div class="ejercicio-item">
+                    <h3>Sentadilla</h3>
+                    <p><strong>Series:</strong> 4</p>
+                    <p><strong>Repeticiones:</strong> 6-8</p>
+                    <p><strong>Descanso:</strong> 2-3 min</p>
+                    <span class="info-badge">💪 Ejercicio</span>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>Prensa de Piernas</h3>
+                    <p><strong>Series:</strong> 3</p>
+                    <p><strong>Repeticiones:</strong> 8-10</p>
+                    <p><strong>Descanso:</strong> 1-2 min</p>
+                    <span class="info-badge">💪 Ejercicio</span>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>Press de Hombros</h3>
+                    <p><strong>Series:</strong> 3</p>
+                    <p><strong>Repeticiones:</strong> 8-10</p>
+                    <p><strong>Descanso:</strong> 1-2 min</p>
+                    <span class="info-badge">💪 Ejercicio</span>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>Elevaciones Laterales</h3>
+                    <p><strong>Series:</strong> 3</p>
+                    <p><strong>Repeticiones:</strong> 10-12</p>
+                    <p><strong>Descanso:</strong> 1 min</p>
+                    <span class="info-badge">💪 Ejercicio</span>
+                </div>
+
+                <div class="descanso">☀️ Día de Descanso</div>
+            </div>
+
+            <div class="dia-card">
+                <h2>Día 4: Espalda y Core</h2>
+                
+                <div class="ejercicio-item">
+                    <h3>Remo Inclinado</h3>
+                    <p><strong>Series:</strong> 3</p>
+                    <p><strong>Repeticiones:</strong> 8-10</p>
+                    <p><strong>Descanso:</strong> 1-2 min</p>
+                    <span class="info-badge">💪 Ejercicio</span>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>Remo Máquina</h3>
+                    <p><strong>Series:</strong> 3</p>
+                    <p><strong>Repeticiones:</strong> 8-10</p>
+                    <p><strong>Descanso:</strong> 1 min</p>
+                    <span class="info-badge">💪 Ejercicio</span>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>Encogimientos de Hombros</h3>
+                    <p><strong>Series:</strong> 3</p>
+                    <p><strong>Repeticiones:</strong> 10-12</p>
+                    <p><strong>Descanso:</strong> 1 min</p>
+                    <span class="info-badge">💪 Ejercicio</span>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>Extensión de Cuádriceps</h3>
+                    <p><strong>Series:</strong> 3</p>
+                    <p><strong>Repeticiones:</strong> 8-10</p>
+                    <p><strong>Descanso:</strong> 1 min</p>
+                    <span class="info-badge">💪 Ejercicio</span>
+                </div>
+
+                <div class="descanso">☀️ Día de Descanso</div>
+            </div>
+
+            <div class="dia-card">
+                <h2>Día 5: Piernas y Brazos</h2>
+                
+                <div class="ejercicio-item">
+                    <h3>Sentadilla Búlgara</h3>
+                    <p><strong>Series:</strong> 3</p>
+                    <p><strong>Repeticiones:</strong> 8-10</p>
+                    <p><strong>Descanso:</strong> 1-2 min</p>
+                    <span class="info-badge">💪 Ejercicio</span>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>Flexión de Isquiotibiales</h3>
+                    <p><strong>Series:</strong> 3</p>
+                    <p><strong>Repeticiones:</strong> 8-10</p>
+                    <p><strong>Descanso:</strong> 1 min</p>
+                    <span class="info-badge">💪 Ejercicio</span>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>Curl Predicador</h3>
+                    <p><strong>Series:</strong> 3</p>
+                    <p><strong>Repeticiones:</strong> 8-10</p>
+                    <p><strong>Descanso:</strong> 1 min</p>
+                    <span class="info-badge">💪 Ejercicio</span>
+                </div>
+
+                <div class="ejercicio-item">
+                    <h3>Press Francés</h3>
+                    <p><strong>Series:</strong> 3</p>
+                    <p><strong>Repeticiones:</strong> 8-10</p>
+                    <p><strong>Descanso:</strong> 1 min</p>
+                    <span class="info-badge">💪 Ejercicio</span>
+                </div>
+            </div>
+        </div>
+
+        <a href="../index.html" class="volver-btn">← Volver al Inicio</a>
+    </div>
+
+    <!-- Scripts compartidos y carga de imágenes para los ejercicios. -->
+    <footer id="site-footer"></footer>
+    <script src="../JS/footer.js"></script>
+    <script src="../JS/reveal-scroll.js"></script>
+    <script src="../JS/imagenes-ejercicios.js"></script>
+    <script src="../JS/menu-usuario.js"></script>
+</body>
+</html>

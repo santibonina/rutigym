@@ -1,0 +1,369 @@
+/* Estilos de la búsqueda de gimnasios: mapa, formulario, resultados y reseñas. */
+.gimnasios-page {
+    width: min(1400px, calc(100% - 40px));
+    margin: 0 auto 48px;
+}
+
+.gimnasios-header {
+    margin: 26px 0 24px;
+    text-align: left;
+}
+
+.gimnasios-eyebrow {
+    color: #2dd36f;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.gimnasios-header h1 {
+    margin: 4px 0 6px;
+    color: #ffffff;
+    text-align: left;
+    font-size: 30px;
+}
+
+.gimnasios-header > p:last-child {
+    color: #b8c5d6;
+    font-size: 14px;
+}
+
+.gimnasios-explorer {
+    /* Colores locales del panel de búsqueda y distribución en dos columnas. */
+    --gym-bg: #1a1f2e;
+    --gym-raised: #242a39;
+    --gym-line: #343d4b;
+    --gym-muted: #b8c5d6;
+    --gym-green: #2dd36f;
+    --gym-red: #e63946;
+    display: grid;
+    grid-template-columns: minmax(360px, 1.05fr) minmax(0, 0.95fr);
+    min-height: 560px;
+    overflow: hidden;
+    border: 1px solid var(--gym-line);
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--gym-bg), var(--gym-raised));
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+}
+
+.map-panel {
+    grid-column: 2;
+    grid-row: 1;
+    min-height: 560px;
+    background: var(--gym-bg);
+}
+
+.map-panel iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 560px;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.places-panel {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+    padding: 28px 30px 22px;
+    color: #ffffff;
+}
+
+.places-panel h2 {
+    margin: 0 0 20px;
+    color: #ffffff;
+    text-align: left;
+    font-size: 23px;
+}
+
+.gym-search {
+    max-width: none;
+    margin: 0 0 26px;
+}
+
+.gym-search label {
+    margin-bottom: 7px;
+    color: var(--gym-muted);
+    font-size: 12px;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.search-row {
+    display: flex;
+    gap: 8px;
+}
+
+.search-row input[type="search"] {
+    min-width: 0;
+    margin: 0;
+    border: 1px solid var(--gym-line);
+    border-radius: 5px;
+    background: var(--gym-bg);
+    color: #ffffff;
+}
+
+.search-row input[type="search"]:focus {
+    border-color: var(--gym-green);
+    background: var(--gym-bg);
+    box-shadow: 0 0 0 2px rgba(45, 211, 111, 0.15);
+}
+
+.search-row button {
+    flex: 0 0 auto;
+    padding: 10px 16px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, var(--gym-red), #d62828);
+    box-shadow: none;
+    font-size: 13px;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.search-row button:hover {
+    transform: none;
+    background: #c71c22;
+    box-shadow: none;
+}
+
+.results-label {
+    margin-bottom: 4px;
+    color: var(--gym-green);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.gym-results {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.gym-results li {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr) 32px;
+    align-items: center;
+    gap: 12px;
+    padding: 17px 0;
+    border-bottom: 1px solid var(--gym-line);
+}
+
+.result-icon {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(45, 211, 111, 0.12);
+    color: var(--gym-green);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.gym-results h3 {
+    margin: 0 0 3px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.gym-results p {
+    margin: 0;
+    color: var(--gym-muted);
+    font-size: 12px;
+}
+
+.gym-result-select {
+    display: grid;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    place-items: center;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: none;
+    color: var(--gym-green);
+    font-size: 20px;
+    letter-spacing: 0;
+}
+
+.gym-result-select:hover {
+    transform: none;
+    background: rgba(45, 211, 111, 0.1);
+    box-shadow: none;
+}
+
+.maps-note {
+    margin-top: 18px;
+    color: var(--gym-muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.search-status {
+    margin: 8px 0 14px;
+    color: var(--gym-muted);
+    font-size: 13px;
+}
+
+.place-results {
+    display: grid;
+    max-height: 760px;
+    gap: 10px;
+    margin: 0;
+    padding: 0 4px 0 0;
+    overflow-y: auto;
+    list-style: none;
+}
+
+.gym-place {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--gym-line);
+}
+
+.gym-place-select {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #ffffff;
+    text-align: left;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.gym-place-select:hover {
+    transform: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+.gym-place-name {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.gym-place-rating,
+.gym-place-address,
+.gym-place-hours,
+.gym-place-status {
+    display: block;
+    margin-top: 3px;
+    color: var(--gym-muted);
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.gym-place-rating strong {
+    color: #ffd60a;
+}
+
+.gym-place-review {
+    margin: 9px 0 0;
+    padding-left: 10px;
+    border-left: 2px solid var(--gym-green);
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.gym-place-review-author {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+    color: var(--gym-muted);
+    font-size: 11px;
+}
+
+.gym-place-review-author img {
+    width: 22px;
+    height: 22px;
+    margin: 0;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.gym-place-review-author a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.gym-place-review-author a:hover {
+    text-decoration: underline;
+}
+
+.gym-place details {
+    margin-top: 8px;
+    color: var(--gym-muted);
+    font-size: 12px;
+}
+
+.gym-place details summary {
+    width: fit-content;
+    cursor: pointer;
+    color: var(--gym-green);
+}
+
+.gym-place details ul {
+    margin: 8px 0 0;
+    padding-left: 18px;
+    list-style: disc;
+}
+
+/* En tabletas y celulares, los paneles se apilan y el mapa reduce su altura. */
+@media (max-width: 800px) {
+    .gimnasios-page {
+        width: min(100% - 28px, 620px);
+    }
+
+    .gimnasios-explorer {
+        grid-template-columns: 1fr;
+    }
+
+    .places-panel {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .map-panel {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .map-panel,
+    .map-panel iframe {
+        min-height: 310px;
+        height: 310px;
+    }
+
+    .places-panel {
+        padding: 24px 20px;
+    }
+}
+
+/* Ajustes adicionales para celulares angostos. */
+@media (max-width: 420px) {
+    .gimnasios-header h1 {
+        font-size: 25px;
+    }
+
+    .search-row {
+        flex-direction: column;
+    }
+
+    .search-row button {
+        width: 100%;
+    }
+}

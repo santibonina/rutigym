@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/estilos.css">
+    <title>Iniciar Sesión - RutiGym</title>
+</head>
+<body>
+
+    <!-- Navegación general del sitio, disponible también desde esta pantalla. -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-btn">☰</label>
+    <label for="menu-toggle" class="overlay"></label>
+
+    <div class="sidebar">
+        <h3>Navegación</h3>
+        <a href="../index.html">🏠 Inicio</a>
+
+        <h3>Músculos</h3>
+        <a href="musculos/pecho.html">Pecho</a>
+        <a href="musculos/espalda.html">Espalda</a>
+        <a href="musculos/piernas.html">Piernas</a>
+        <a href="musculos/brazos.html">Brazos</a>
+
+        <h3>Rutinas</h3>
+        <input type="checkbox" id="rutinas-toggle" class="rutinas-toggle">
+        <label for="rutinas-toggle" class="rutinas-btn">📋 Ver Rutinas</label>
+        <div class="rutinas-submenu">
+            <a href="rutinas-2dias.html" class="rutina-duracion">2 Días</a>
+            <a href="rutinas-3dias.html" class="rutina-duracion">3 Días</a>
+            <a href="rutinas-4dias.html" class="rutina-duracion">4 Días</a>
+            <a href="rutinas-5dias.html" class="rutina-duracion">5 Días</a>
+        </div>
+
+        <h3>Gimnasios</h3>
+        <a href="gimnasio.html">Ver gimnasios</a>
+    </div>
+
+    <div class="nav">
+        <h1><a href="../../index.html" style="text-decoration: none; color: inherit;">RUTIGYM</a></h1>
+    </div>
+    <!-- ICONO DE USUARIO -->
+    <div class="usuario">
+        👤
+        <div class="menu-usuario" id="menu">
+            <a href="iniciosesion.html">Iniciar Sesión</a>
+            <a href="registro.html">Registrarse</a>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Formulario visual de acceso a la cuenta. -->
+    <h2 style="text-align:center">Iniciar Sesión</h2>
+
+    <form class="centrado">
+        <label>Usuario:</label><br>
+        <input type="text" name="usuario"><br><br>
+
+        <label>Contraseña:</label><br>
+        <input type="password" name="clave"><br><br>
+
+        <button type="button">Entrar</button>
+    </form>
+
+    <p style="text-align:center; margin-top:20px;">
+        ¿No tenés cuenta? <a href="registro.html" style="color:red;">Registrate acá</a>
+    </p>
+
+    <!-- Pie de página e interacciones comunes. -->
+    <footer id="site-footer"></footer>
+    <script src="../JS/footer.js"></script>
+    <script src="../JS/reveal-scroll.js"></script>
+    <script src="../JS/menu-usuario.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+/* Estilos compartidos para las páginas de rutinas organizadas por cantidad de días. */
+/* Encabezado de la rutina y distribución de sus tarjetas por día. */
+.rutina-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.rutina-header {
+    background: linear-gradient(135deg, rgba(230, 57, 70, 0.2) 0%, rgba(45, 211, 111, 0.1) 100%);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: left;
+    margin-bottom: 40px;
+    border: 1px solid rgba(230, 57, 70, 0.3);
+}
+
+.rutina-header h1 {
+    color: #e63946;
+    text-align: left;
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.rutina-header p {
+    color: #b8c5d6;
+    text-align: left;
+    font-size: 18px;
+}
+
+.rutina-dias {
+    display: grid;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.dia-card {
+    background: linear-gradient(135deg, rgba(26, 31, 46, 0.95) 0%, rgba(36, 42, 57, 0.95) 100%);
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 5px solid #2dd36f;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.dia-card h2 {
+    color: #e63946;
+    text-align: left;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Presentación de cada ejercicio, sus detalles y su imagen. */
+.ejercicio-item {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border-left: 3px solid #2dd36f;
+}
+
+.ejercicio-item--con-imagen {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 150px;
+    align-items: center;
+    gap: 18px;
+}
+
+.ejercicio-item__details {
+    min-width: 0;
+}
+
+.ejercicio-item h3 {
+    color: #2dd36f;
+    text-align: left;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.ejercicio-item p {
+    color: #b8c5d6;
+    text-align: left;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.ejercicio-imagen {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Reduce espacios y tamaños para que las rutinas se lean en celulares. */
+@media (max-width: 480px) {
+    .ejercicio-item--con-imagen {
+        grid-template-columns: minmax(0, 1fr) 96px;
+        gap: 12px;
+        padding: 12px;
+    }
+}
+
+.info-badge {
+    display: inline-block;
+    background: rgba(230, 57, 70, 0.2);
+    color: #e63946;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 8px;
+    margin-top: 8px;
+}
+
+.descanso {
+    background: linear-gradient(135deg, rgba(45, 211, 111, 0.1) 0%, rgba(45, 211, 111, 0.05) 100%);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    color: #2dd36f;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.volver-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #e63946 0%, #d62828 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+}
+
+.volver-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+}

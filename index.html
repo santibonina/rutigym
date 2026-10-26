@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/estilos.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <title>RutiGym - Tu Gimnasio Virtual</title>
+</head>
+<body>
+
+    <!-- Navegación lateral con enlaces a rutinas, grupos musculares y gimnasios. -->
+    <!-- El checkbox permite abrir y cerrar el menú desde CSS. -->
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="menu-btn">☰</label>
+<label for="menu-toggle" class="overlay"></label>
+
+<div class="sidebar">
+    <a href="index.html">🏠 Inicio</a>
+
+    <!-- MÚSCULOS DESPLEGABLE -->
+    <input type="checkbox" id="musculos-toggle" class="rutinas-toggle">
+    <label for="musculos-toggle" class="rutinas-btn">
+        💪 Músculos
+    </label>
+    <div class="rutinas-submenu">
+        <a href="PAGES/musculos/pecho.html" class="rutina-duracion">Pecho</a>
+        <a href="PAGES/musculos/espalda.html" class="rutina-duracion">Espalda</a>
+        <a href="PAGES/musculos/piernas.html" class="rutina-duracion">Piernas</a>
+        <a href="PAGES/musculos/brazos.html" class="rutina-duracion">Brazos</a>
+    </div>
+
+    <!-- RUTINAS DESPLEGABLE -->
+    <input type="checkbox" id="rutinas-toggle" class="rutinas-toggle">
+    <label for="rutinas-toggle" class="rutinas-btn">
+        📋 Ver Rutinas
+    </label>
+    <div class="rutinas-submenu">
+        <a href="PAGES/rutinas-2dias.html" class="rutina-duracion">2 Días</a>
+        <a href="PAGES/rutinas-3dias.html" class="rutina-duracion">3 Días</a>
+        <a href="PAGES/rutinas-4dias.html" class="rutina-duracion">4 Días</a>
+        <a href="PAGES/rutinas-5dias.html" class="rutina-duracion">5 Días</a>
+    </div>
+
+    
+    <a href="PAGES/gimnasio.html">Ver gimnasios</a>
+</div>
+
+    <!-- ICONO DE USUARIO -->
+    <div class="usuario">
+        👤
+        <div class="menu-usuario" id="menu">
+            <a href="PAGES/iniciosesion.html">Iniciar Sesión</a>
+            <a href="PAGES/registro.html">Registrarse</a>
+        </div>
+    </div>
+
+    <div class="nav">
+        <h1><a href="index.html" class="logo-link">RUTIGYM</a></h1>
+    </div>
+
+    <!-- Presentación principal del sitio y accesos directos para empezar. -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-eyebrow">TU ESPACIO PARA ENTRENAR</p>
+            <h1>Tu entrenamiento empieza a tu ritmo.</h1>
+            <p>Encontrá una rutina que encaje con tu semana, aprendé sobre cada grupo muscular y descubrí gimnasios cerca tuyo.</p>
+            <div class="hero-buttons">
+                <a href="#explorar">Explorar rutinas</a>
+                <a href="PAGES/gimnasio.html" class="hero-button-secondary">Buscar un gimnasio</a>
+            </div>
+        </div>
+        <a class="hero-scroll" href="#explorar">Conocé RutiGym <span aria-hidden="true">↓</span></a>
+    </section>
+
+    <!-- Accesos en formato de tarjetas a las secciones más importantes. -->
+    <section class="explora-section" id="explorar">
+        <header class="home-section-heading">
+            <p class="home-eyebrow">ENCONTRÁ TU PUNTO DE PARTIDA</p>
+            <h2>¿Qué te gustaría hacer hoy?</h2>
+            <p>Elegí una opción y empezá a armar un entrenamiento que puedas sostener.</p>
+        </header>
+
+        <div class="explora-grid">
+            <a class="explora-link" href="PAGES/rutinas-2dias.html">
+                <span class="explora-number">01 / RUTINA</span>
+                <h3>Entrenar 2 días</h3>
+                <p>Una estructura simple para empezar.</p>
+                <span class="explora-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="explora-link" href="PAGES/rutinas-3dias.html">
+                <span class="explora-number">02 / RUTINA</span>
+                <h3>Entrenar 3 días</h3>
+                <p>Un plan equilibrado para tu semana.</p>
+                <span class="explora-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="explora-link" href="PAGES/rutinas-4dias.html">
+                <span class="explora-number">03 / RUTINA</span>
+                <h3>Entrenar 4 días</h3>
+                <p>Más frecuencia, con días organizados.</p>
+                <span class="explora-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="explora-link" href="PAGES/rutinas-5dias.html">
+                <span class="explora-number">04 / RUTINA</span>
+                <h3>Entrenar 5 días</h3>
+                <p>Una opción para una semana activa.</p>
+                <span class="explora-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="explora-link" href="PAGES/musculos/pecho.html">
+                <span class="explora-number">05 / GUÍA</span>
+                <h3>Conocer los músculos</h3>
+                <p>Explorá ejercicios por grupo muscular.</p>
+                <span class="explora-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="explora-link" href="PAGES/gimnasio.html">
+                <span class="explora-number">06 / CERCA TUYO</span>
+                <h3>Encontrar un gimnasio</h3>
+                <p>Buscá opciones por zona.</p>
+                <span class="explora-arrow" aria-hidden="true">↗</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Explica el propósito del sitio y resume sus beneficios. -->
+    <section class="sobre-nosotros" id="sobre-nosotros">
+        <div class="sobre-nosotros-intro">
+            <p class="home-eyebrow">QUIÉNES SOMOS</p>
+            <h2>Un lugar para empezar, aprender y seguir.</h2>
+        </div>
+
+        <div class="sobre-nosotros-content">
+            <p>RutiGym reúne rutinas organizadas por días, guías de grupos musculares y un buscador de gimnasios para que planificar tu entrenamiento sea más sencillo.</p>
+            <p>Creemos que no hace falta tener todo resuelto para dar el primer paso. Podés explorar, elegir una opción y avanzar a tu manera.</p>
+            <a href="#explorar">Explorar lo que ofrece RutiGym <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="sobre-nosotros-values">
+            <div>
+                <h3>A tu ritmo</h3>
+                <p>Rutinas de 2, 3, 4 o 5 días para organizar tu semana.</p>
+            </div>
+            <div>
+                <h3>Con claridad</h3>
+                <p>Información ordenada para encontrar lo que necesitás.</p>
+            </div>
+            <div>
+                <h3>Cerca tuyo</h3>
+                <p>Un espacio para explorar gimnasios por zona.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enlaces a las guías de cada grupo muscular. -->
+    <section class="muscle-overview" id="grupos-musculares">
+        <div class="muscle-overview-heading">
+            <p class="home-eyebrow">GUÍAS DE ENTRENAMIENTO</p>
+            <h2>Explorá cada grupo muscular</h2>
+            <p>Encontrá ejercicios, músculos principales y detalles para sumar a tu entrenamiento.</p>
+        </div>
+
+        <div class="muscle-link-list">
+            <a href="PAGES/musculos/pecho.html">
+                <span class="muscle-link-number">01</span>
+                <span class="muscle-link-copy"><strong>Pecho</strong><small>Press de banca · aperturas</small></span>
+                <span class="muscle-link-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="PAGES/musculos/espalda.html">
+                <span class="muscle-link-number">02</span>
+                <span class="muscle-link-copy"><strong>Espalda</strong><small>Remo con barra · dominadas</small></span>
+                <span class="muscle-link-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="PAGES/musculos/piernas.html">
+                <span class="muscle-link-number">03</span>
+                <span class="muscle-link-copy"><strong>Piernas</strong><small>Sentadillas · prensa</small></span>
+                <span class="muscle-link-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a href="PAGES/musculos/brazos.html">
+                <span class="muscle-link-number">04</span>
+                <span class="muscle-link-copy"><strong>Brazos</strong><small>Curl de bíceps · fondos</small></span>
+                <span class="muscle-link-arrow" aria-hidden="true">↗</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Vista previa de una rutina semanal y enlace a su versión completa. -->
+    <section class="week-preview" aria-labelledby="week-preview-title">
+        <div class="week-preview-heading">
+            <div>
+                <p class="home-eyebrow">RUTINA DESTACADA</p>
+                <h2 id="week-preview-title">Una semana en tres días</h2>
+                <p>Una división sencilla para trabajar distintos grupos musculares durante la semana.</p>
+            </div>
+            <a href="PAGES/rutinas-3dias.html">Ver rutina completa <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="week-days">
+            <article class="week-day">
+                <span>DÍA 01</span>
+                <h3>Pecho y tríceps</h3>
+                <p>Press de banca · aperturas</p>
+            </article>
+            <article class="week-day">
+                <span>DÍA 02</span>
+                <h3>Espalda y bíceps</h3>
+                <p>Remo con barra · jalón</p>
+            </article>
+            <article class="week-day">
+                <span>DÍA 03</span>
+                <h3>Piernas y hombros</h3>
+                <p>Sentadillas · prensa</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- El pie y las interacciones se completan con los scripts compartidos. -->
+    <footer id="site-footer"></footer>
+
+    <script src="JS/footer.js"></script>
+    <script src="JS/reveal-scroll.js"></script>
+    <script src="JS/menu-usuario.js"></script>
+</body>
+</html>
