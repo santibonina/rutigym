@@ -1,0 +1,483 @@
+.fitness-assistant,
+.fitness-assistant * {
+    box-sizing: border-box;
+}
+
+.fitness-assistant {
+    position: fixed;
+    z-index: 1200;
+    right: max(20px, env(safe-area-inset-right));
+    bottom: max(20px, env(safe-area-inset-bottom));
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    line-height: 1.5;
+}
+
+.fitness-assistant [hidden] {
+    display: none !important;
+}
+
+.fitness-assistant__launcher {
+    display: grid;
+    width: 68px;
+    height: 68px;
+    place-items: center;
+    align-content: center;
+    gap: 1px;
+    margin: 0;
+    padding: 5px;
+    border: 1px solid rgba(226, 243, 231, 0.55);
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 31% 22%, rgba(255, 255, 255, 0.7), transparent 24%),
+        linear-gradient(145deg, #d8ff89, #a8d64b 72%, #8bbd37);
+    color: #101710;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.42), 0 0 0 5px rgba(200, 241, 105, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.fitness-assistant__launcher:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45), 0 0 0 7px rgba(200, 241, 105, 0.14);
+}
+
+.fitness-assistant__launcher:focus-visible,
+.fitness-assistant button:focus-visible,
+.fitness-assistant select:focus-visible,
+.fitness-assistant textarea:focus-visible {
+    outline: 3px solid #c8f169;
+    outline-offset: 3px;
+}
+
+.fitness-assistant__launcher-icon {
+    width: 35px;
+    height: 35px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    overflow: visible;
+}
+
+.fitness-assistant__launcher-icon .assistant-chat-bubble {
+    fill: rgba(255, 255, 255, 0.5);
+    stroke: #26351d;
+    stroke-width: 2.1;
+}
+
+.fitness-assistant__launcher-icon .assistant-dumbbell {
+    stroke: #26351d;
+    stroke-width: 2.5;
+}
+
+.fitness-assistant__launcher-icon .assistant-spark {
+    fill: #26351d;
+    stroke: #26351d;
+    stroke-linejoin: round;
+    stroke-width: 0.8;
+}
+
+.fitness-assistant__launcher span {
+    color: #101710;
+    font-size: 8px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.fitness-assistant__panel {
+    position: absolute;
+    right: 0;
+    bottom: 80px;
+    display: flex;
+    width: min(390px, calc(100vw - 32px));
+    max-height: min(680px, calc(100dvh - 120px));
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(200, 241, 105, 0.24);
+    border-radius: 21px;
+    background:
+        radial-gradient(ellipse at 100% 0, rgba(200, 241, 105, 0.08), transparent 15rem),
+        #11191c;
+    color: #f3f7f3;
+    box-shadow: 0 22px 70px rgba(0, 0, 0, 0.58);
+    animation: fitness-assistant-enter 180ms ease-out;
+}
+
+.fitness-assistant__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 19px 19px 14px;
+    border-bottom: 1px solid rgba(226, 243, 231, 0.1);
+}
+
+.fitness-assistant__header p {
+    margin: 0 0 4px;
+    color: #c8f169;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+}
+
+.fitness-assistant__header h2 {
+    margin: 0;
+    color: #f3f7f3;
+    font-size: 19px;
+    font-weight: 750;
+    letter-spacing: -0.035em;
+    line-height: 1.25;
+}
+
+.fitness-assistant__close {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    place-items: center;
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgba(226, 243, 231, 0.13);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    color: #e4ece6;
+    box-shadow: none;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.fitness-assistant__close:hover {
+    border-color: rgba(200, 241, 105, 0.38);
+    background: rgba(200, 241, 105, 0.09);
+    color: #c8f169;
+    box-shadow: none;
+}
+
+.fitness-assistant__tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    padding: 10px 16px 0;
+}
+
+.fitness-assistant__tabs button {
+    min-height: 38px;
+    margin: 0;
+    padding: 8px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    color: #a6b5ad;
+    box-shadow: none;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+    cursor: pointer;
+}
+
+.fitness-assistant__tabs button[aria-selected="true"] {
+    border-color: rgba(200, 241, 105, 0.2);
+    background: rgba(200, 241, 105, 0.09);
+    color: #c8f169;
+}
+
+.fitness-assistant__tabs button:hover {
+    color: #c8f169;
+    box-shadow: none;
+}
+
+.fitness-assistant__content {
+    min-height: 0;
+    display: flex;
+    flex: 1;
+    overflow-y: auto;
+    padding: 13px 17px 16px;
+    scrollbar-color: rgba(200, 241, 105, 0.4) transparent;
+    scrollbar-width: thin;
+}
+
+.fitness-assistant__content > section {
+    display: flex;
+    width: 100%;
+    min-height: 0;
+    flex-direction: column;
+}
+
+.fitness-assistant__conversation {
+    display: flex;
+    min-height: 160px;
+    max-height: 300px;
+    flex-direction: column;
+    gap: 11px;
+    overflow-y: auto;
+    padding: 2px 3px 10px 0;
+    scrollbar-color: rgba(200, 241, 105, 0.35) transparent;
+    scrollbar-width: thin;
+}
+
+.fitness-assistant__message {
+    display: grid;
+    max-width: 91%;
+    gap: 4px;
+    padding: 10px 12px;
+    border: 1px solid rgba(226, 243, 231, 0.1);
+    border-radius: 14px;
+    color: #d7e1da;
+    font-size: 11px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+    animation: fitness-assistant-enter 160ms ease-out;
+}
+
+.fitness-assistant__message--assistant {
+    align-self: flex-start;
+    border-top-left-radius: 5px;
+    background: #1a2525;
+}
+
+.fitness-assistant__message--user {
+    align-self: flex-end;
+    border-color: rgba(200, 241, 105, 0.19);
+    border-top-right-radius: 5px;
+    background: rgba(200, 241, 105, 0.12);
+    color: #f1f6e8;
+}
+
+.fitness-assistant__message-author {
+    color: #c8f169;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+}
+
+.fitness-assistant__message--user .fitness-assistant__message-author {
+    color: #d8ff89;
+}
+
+.fitness-assistant__message p {
+    margin: 0;
+    white-space: pre-line;
+}
+
+.fitness-assistant__message .fitness-assistant__links {
+    margin: 4px 0 0;
+    padding-top: 7px;
+    border-top: 1px solid rgba(226, 243, 231, 0.1);
+    color: #bac8bf;
+    font-size: 10px;
+}
+
+.fitness-assistant__composer {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 8px;
+    margin-top: auto !important;
+    padding-top: 9px;
+    border-top: 1px solid rgba(226, 243, 231, 0.09);
+}
+
+.fitness-assistant__composer .fitness-assistant__question-label {
+    min-width: 0;
+}
+
+.fitness-assistant__composer textarea {
+    min-height: 48px;
+    max-height: 110px;
+    resize: vertical;
+}
+
+.fitness-assistant__composer .fitness-assistant__primary {
+    min-width: 67px;
+    min-height: 42px;
+    margin: 0;
+}
+
+.fitness-assistant__intro {
+    margin: 0 0 13px;
+    color: #a6b5ad;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.fitness-assistant form {
+    display: grid;
+    gap: 10px;
+    max-width: none;
+    margin: 0;
+}
+
+.fitness-assistant form label {
+    display: grid;
+    gap: 5px;
+    margin: 0;
+    color: #d4ded7;
+    font-size: 10px;
+    font-weight: 650;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+.fitness-assistant select,
+.fitness-assistant textarea {
+    width: 100%;
+    min-width: 0;
+    min-height: 39px;
+    margin: 0;
+    padding: 9px 11px;
+    border: 1px solid rgba(226, 243, 231, 0.14);
+    border-radius: 10px;
+    background: #0b1113;
+    color: #f3f7f3;
+    box-shadow: none;
+    font: inherit;
+    font-size: 11px;
+    color-scheme: dark;
+}
+
+.fitness-assistant textarea {
+    min-height: 68px;
+    resize: vertical;
+}
+
+.fitness-assistant__primary {
+    min-height: 41px;
+    margin: 3px 0 0;
+    padding: 9px 14px;
+    border: 1px solid rgba(200, 241, 105, 0.36);
+    border-radius: 10px;
+    background: linear-gradient(135deg, #d8ff89, #a8d64b);
+    color: #111710;
+    box-shadow: none;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: none;
+    cursor: pointer;
+}
+
+.fitness-assistant__primary:hover {
+    background: #d8ff89;
+    color: #111710;
+    box-shadow: 0 5px 18px rgba(200, 241, 105, 0.17);
+}
+
+.fitness-assistant__answer {
+    display: grid;
+    gap: 8px;
+    margin-top: 13px;
+    padding: 13px;
+    border: 1px solid rgba(200, 241, 105, 0.18);
+    border-radius: 12px;
+    background: rgba(200, 241, 105, 0.045);
+    color: #bac8bf;
+    font-size: 10px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+}
+
+.fitness-assistant__answer h3,
+.fitness-assistant__answer p {
+    margin: 0;
+}
+
+.fitness-assistant__answer h3 {
+    color: #c8f169;
+    font-size: 13px;
+}
+
+.fitness-assistant__answer a {
+    color: #c8f169;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.fitness-assistant__links {
+    padding-top: 7px;
+    border-top: 1px solid rgba(226, 243, 231, 0.1);
+}
+
+.fitness-assistant__suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 9px 0 12px;
+}
+
+.fitness-assistant__suggestions button {
+    justify-self: auto;
+    margin: 0;
+    padding: 7px 10px;
+    border: 1px solid rgba(226, 243, 231, 0.13);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.025);
+    color: #d2ded5;
+    box-shadow: none;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-align: left;
+    text-transform: none;
+    cursor: pointer;
+}
+
+.fitness-assistant__suggestions button:hover {
+    border-color: rgba(200, 241, 105, 0.34);
+    background: rgba(200, 241, 105, 0.07);
+    color: #c8f169;
+    box-shadow: none;
+}
+
+.fitness-assistant__disclaimer {
+    margin: 0;
+    padding: 10px 17px 13px;
+    border-top: 1px solid rgba(226, 243, 231, 0.09);
+    color: #87968d;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+@keyframes fitness-assistant-enter {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 520px) {
+    .fitness-assistant {
+        right: max(14px, env(safe-area-inset-right));
+        bottom: max(14px, env(safe-area-inset-bottom));
+    }
+
+    .fitness-assistant__launcher {
+        width: 62px;
+        height: 62px;
+    }
+
+    .fitness-assistant__launcher-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .fitness-assistant__panel {
+        right: -4px;
+        bottom: 72px;
+        width: min(390px, calc(100vw - 24px));
+        max-height: min(680px, calc(100dvh - 100px));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fitness-assistant *,
+    .fitness-assistant *::before,
+    .fitness-assistant *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

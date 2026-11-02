@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento personal - RutiGym</title>
+    <link rel="stylesheet" href="../CSS/estilos.css">
+    <link rel="stylesheet" href="../CSS/seguimiento.css">
+    <link rel="stylesheet" href="../CSS/diseno-nuevo.css">
+</head>
+<body>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-btn" role="button" tabindex="0" aria-label="Abrir menú" aria-expanded="false" aria-controls="sidebar"></label>
+    <label for="menu-toggle" class="overlay"></label>
+
+    <nav class="sidebar" id="sidebar" aria-label="Navegación principal">
+        <h3>Navegación</h3>
+        <a href="../index.html">Inicio</a>
+        <h3>Músculos</h3>
+        <a href="musculos/pecho.html">Pecho</a>
+        <a href="musculos/espalda.html">Espalda</a>
+        <a href="musculos/piernas.html">Piernas</a>
+        <a href="musculos/brazos.html">Brazos</a>
+        <h3>Rutinas</h3>
+        <input type="checkbox" id="rutinas-toggle" class="rutinas-toggle">
+        <label for="rutinas-toggle" class="rutinas-btn">Ver Rutinas</label>
+        <div class="rutinas-submenu">
+            <a href="rutinas-2dias.html" class="rutina-duracion">2 Días</a>
+            <a href="rutinas-3dias.html" class="rutina-duracion">3 Días</a>
+            <a href="rutinas-4dias.html" class="rutina-duracion">4 Días</a>
+            <a href="rutinas-5dias.html" class="rutina-duracion">5 Días</a>
+        </div>
+        <h3>Explorar</h3>
+        <a href="tienda.html">Tienda</a>
+        <a href="gimnasio.html">Ver gimnasios</a>
+        <h3>Tu progreso</h3>
+        <a href="seguimiento.html" aria-current="page">Seguimiento personal</a>
+    </nav>
+
+    <div class="usuario" role="button" tabindex="0" aria-label="Menú de usuario" aria-expanded="false" aria-haspopup="true" aria-controls="menu">
+        <svg class="user-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>
+    </div>
+    <div class="menu-usuario" id="menu">
+        <a href="iniciosesion.html">Iniciar Sesión</a>
+        <a href="registro.html">Registrarse</a>
+    </div>
+
+    <header class="nav">
+        <h1><a href="../index.html" class="logo-link">RUTIGYM</a></h1>
+    </header>
+
+    <main class="progress-page">
+        <header class="progress-hero">
+            <p class="progress-eyebrow">TU PROCESO, A TU RITMO</p>
+            <h1>Un registro real.<br><span>Tu progreso.</span></h1>
+            <p>Guardá tus medidas y marcas, mirá cómo cambian con el tiempo y reconocé todo lo que ya avanzaste.</p>
+            <div class="progress-hero-meta" id="progress-welcome" hidden></div>
+            <a href="#progress-dashboard" class="progress-hero-link" id="progress-start-link" hidden>Ver mi seguimiento <span aria-hidden="true">↓</span></a>
+            <div class="progress-hero-mark" aria-hidden="true"><span>RG</span></div>
+        </header>
+
+        <p class="progress-error" id="progress-error" role="alert" hidden></p>
+        <section class="progress-access" id="progress-access" aria-labelledby="access-title">
+            <p class="progress-eyebrow">UN ESPACIO PARA VOS</p>
+            <h2 id="access-title">Iniciá sesión para ver tu progreso.</h2>
+            <p>El seguimiento es personal y se guarda separado para cada cuenta en este navegador.</p>
+            <div class="progress-access-actions">
+                <a class="progress-primary-link" href="iniciosesion.html?next=seguimiento.html">Iniciar sesión</a>
+                <a class="progress-secondary-link" href="registro.html">Crear cuenta</a>
+            </div>
+        </section>
+
+        <div class="progress-dashboard" id="progress-dashboard" hidden>
+            <section class="progress-section progress-summary" aria-labelledby="summary-title">
+                <div class="progress-section-heading">
+                    <div>
+                        <p class="progress-eyebrow">DESDE EL PRIMER REGISTRO HASTA HOY</p>
+                        <h2 id="summary-title">Tu evolución</h2>
+                    </div>
+                    <p id="progress-date-range"></p>
+                </div>
+                <div class="progress-comparison" id="progress-comparison"></div>
+            </section>
+
+            <div class="progress-columns">
+                <section class="progress-panel" aria-labelledby="measurements-title">
+                    <div class="progress-panel-heading">
+                        <div>
+                            <p class="progress-eyebrow">REGISTRO CORPORAL</p>
+                            <h2 id="measurements-title">Medidas y peso</h2>
+                        </div>
+                    </div>
+                    <p class="progress-help">Cargá uno o más datos. Podés registrar medidas parciales; si guardás la misma fecha, se reemplaza ese registro.</p>
+                    <form id="measurement-form" class="progress-form">
+                        <label for="measurement-date">Fecha</label>
+                        <input id="measurement-date" name="date" type="date" required>
+                        <div class="progress-input-grid">
+                            <label for="measurement-weight">Peso <span>kg</span>
+                                <input id="measurement-weight" name="weight" type="number" min="20" max="400" step="0.1" placeholder="Ej. 72.5">
+                            </label>
+                            <label for="measurement-waist">Cintura <span>cm</span>
+                                <input id="measurement-waist" name="waist" type="number" min="20" max="250" step="0.1" placeholder="Ej. 82">
+                            </label>
+                            <label for="measurement-chest">Pecho <span>cm</span>
+                                <input id="measurement-chest" name="chest" type="number" min="20" max="250" step="0.1" placeholder="Ej. 98">
+                            </label>
+                            <label for="measurement-hips">Cadera <span>cm</span>
+                                <input id="measurement-hips" name="hips" type="number" min="20" max="250" step="0.1" placeholder="Ej. 94">
+                            </label>
+                            <label for="measurement-arm">Brazo <span>cm</span>
+                                <input id="measurement-arm" name="arm" type="number" min="10" max="120" step="0.1" placeholder="Ej. 34">
+                            </label>
+                            <label for="measurement-thigh">Muslo <span>cm</span>
+                                <input id="measurement-thigh" name="thigh" type="number" min="10" max="150" step="0.1" placeholder="Ej. 56">
+                            </label>
+                        </div>
+                        <button type="submit" class="progress-submit">Guardar registro</button>
+                        <p class="progress-message" id="measurement-message" role="status" aria-live="polite"></p>
+                    </form>
+                </section>
+
+                <section class="progress-panel progress-chart-panel" aria-labelledby="chart-title">
+                    <div class="progress-panel-heading progress-chart-heading">
+                        <div>
+                            <p class="progress-eyebrow">TENDENCIA EN EL TIEMPO</p>
+                            <h2 id="chart-title">Gráfico de evolución</h2>
+                        </div>
+                        <label class="progress-chart-select" for="chart-metric">
+                            <span class="visually-hidden">Dato a mostrar</span>
+                            <select id="chart-metric" aria-label="Dato a mostrar">
+                                <option value="weight">Peso (kg)</option>
+                                <option value="waist">Cintura (cm)</option>
+                                <option value="chest">Pecho (cm)</option>
+                                <option value="hips">Cadera (cm)</option>
+                                <option value="arm">Brazo (cm)</option>
+                                <option value="thigh">Muslo (cm)</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="progress-chart" id="progress-chart" aria-live="polite"></div>
+                    <p class="progress-chart-note" id="progress-chart-note"></p>
+                </section>
+            </div>
+
+            <section class="progress-panel progress-history-panel" aria-labelledby="history-title">
+                <div class="progress-panel-heading">
+                    <div>
+                        <p class="progress-eyebrow">TUS REGISTROS</p>
+                        <h2 id="history-title">Historial por fecha</h2>
+                    </div>
+                    <span class="progress-count" id="measurement-count"></span>
+                </div>
+                <div class="progress-table-wrap">
+                    <table class="progress-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Fecha</th>
+                                <th scope="col">Peso</th>
+                                <th scope="col">Cintura</th>
+                                <th scope="col">Pecho</th>
+                                <th scope="col">Cadera</th>
+                                <th scope="col">Brazo</th>
+                                <th scope="col">Muslo</th>
+                                <th scope="col"><span class="visually-hidden">Acciones</span></th>
+                            </tr>
+                        </thead>
+                        <tbody id="measurement-history"></tbody>
+                    </table>
+                </div>
+                <p class="progress-empty" id="measurement-empty">Cuando guardes tus primeras medidas, vas a verlas acá.</p>
+            </section>
+
+            <section class="progress-panel progress-records-panel" aria-labelledby="records-title">
+                <div class="progress-panel-heading">
+                    <div>
+                        <p class="progress-eyebrow">FUERZA Y CONSTANCIA</p>
+                        <h2 id="records-title">Marcas personales</h2>
+                    </div>
+                </div>
+                <p class="progress-help">Registrá el ejercicio, la carga y las repeticiones. Destacamos tu mayor carga anotada por ejercicio.</p>
+                <form id="record-form" class="progress-form progress-record-form">
+                    <label for="record-exercise">Ejercicio
+                        <input id="record-exercise" name="exercise" type="text" maxlength="60" placeholder="Ej. Press de banca" required>
+                    </label>
+                    <label for="record-date">Fecha
+                        <input id="record-date" name="date" type="date" required>
+                    </label>
+                    <label for="record-weight">Carga <span>kg</span>
+                        <input id="record-weight" name="weight" type="number" min="0" max="1000" step="0.5" placeholder="Ej. 60" required>
+                    </label>
+                    <label for="record-reps">Repeticiones
+                        <input id="record-reps" name="reps" type="number" min="1" max="1000" step="1" placeholder="Ej. 8" required>
+                    </label>
+                    <button type="submit" class="progress-submit">Guardar marca</button>
+                </form>
+                <p class="progress-message" id="record-message" role="status" aria-live="polite"></p>
+                <div class="progress-best-list" id="personal-bests"></div>
+                <div class="progress-record-history" id="record-history"></div>
+                <p class="progress-empty" id="records-empty">Todavía no hay marcas registradas. Anotá una para empezar a ver tus récords.</p>
+            </section>
+
+            <p class="progress-privacy-note">Tus datos se guardan solo en este navegador y no se sincronizan ni se cifran; evitá usar esta función en un dispositivo compartido. El seguimiento no reemplaza orientación médica o profesional.</p>
+        </div>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <script src="../JS/footer.js"></script>
+    <script src="../JS/reveal-scroll.js"></script>
+    <script src="../JS/menu-usuario.js"></script>
+    <script src="../JS/seguimiento.js"></script>
+</body>
+</html>

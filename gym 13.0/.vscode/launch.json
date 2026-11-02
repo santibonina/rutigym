@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Serve site",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "python -m http.server 8000 --directory \"${workspaceFolder}\"",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Open in Opera",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://localhost:8000/index.html",
+      "webRoot": "${workspaceFolder}",
+      "runtimeExecutable": "${env:LOCALAPPDATA}\\Programs\\Opera\\opera.exe",
+      "preLaunchTask": "Serve site"
+    },
+    {
+      "name": "Open index.html in Opera",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "file://${workspaceFolder}/index.html",
+      "webRoot": "${workspaceFolder}",
+      "runtimeExecutable": "${env:LOCALAPPDATA}\\Programs\\Opera\\opera.exe"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - RutiGym</title>
+    <link rel="stylesheet" href="../CSS/estilos.css">
+    <link rel="stylesheet" href="../CSS/tienda.css">
+    <link rel="stylesheet" href="../CSS/diseno-nuevo.css">
+</head>
+<body>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-btn" role="button" tabindex="0" aria-label="Abrir menú" aria-expanded="false" aria-controls="sidebar"></label>
+    <label for="menu-toggle" class="overlay"></label>
+
+    <nav class="sidebar" id="sidebar" aria-label="Navegación principal">
+        <h3>Navegación</h3>
+        <a href="../index.html">Inicio</a>
+        <h3>Músculos</h3>
+        <a href="musculos/pecho.html">Pecho</a>
+        <a href="musculos/espalda.html">Espalda</a>
+        <a href="musculos/piernas.html">Piernas</a>
+        <a href="musculos/brazos.html">Brazos</a>
+        <h3>Rutinas</h3>
+        <input type="checkbox" id="rutinas-toggle" class="rutinas-toggle">
+        <label for="rutinas-toggle" class="rutinas-btn">Ver Rutinas</label>
+        <div class="rutinas-submenu">
+            <a href="rutinas-2dias.html" class="rutina-duracion">2 Días</a>
+            <a href="rutinas-3dias.html" class="rutina-duracion">3 Días</a>
+            <a href="rutinas-4dias.html" class="rutina-duracion">4 Días</a>
+            <a href="rutinas-5dias.html" class="rutina-duracion">5 Días</a>
+        </div>
+        <h3>Explorar</h3>
+        <a href="tienda.html" aria-current="page">Tienda</a>
+        <a href="gimnasio.html">Ver gimnasios</a>
+    </nav>
+
+    <div class="usuario" role="button" tabindex="0" aria-label="Menú de usuario" aria-expanded="false" aria-haspopup="true" aria-controls="menu">
+        <svg class="user-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>
+    </div>
+    <div class="menu-usuario" id="menu">
+        <a href="iniciosesion.html">Iniciar Sesión</a>
+        <a href="registro.html">Registrarse</a>
+    </div>
+
+    <header class="nav">
+        <h1><a href="../index.html" class="logo-link">RUTIGYM</a></h1>
+    </header>
+
+    <main class="store-page">
+        <header class="store-hero">
+            <p class="store-eyebrow">EQUIPATE PARA TU PRÓXIMO ENTRENAMIENTO</p>
+            <h1>Lo que te acompaña<br>en cada repetición.</h1>
+            <p>Accesorios y esenciales para que tu rutina vaya con vos, adentro y afuera del gimnasio.</p>
+            <a href="#catalogo" class="store-hero-link">Explorar productos <span aria-hidden="true">↘</span></a>
+            <div class="store-hero-orbit" aria-hidden="true"><span>R</span></div>
+        </header>
+
+        <section class="store-content" id="catalogo" aria-labelledby="catalog-title">
+            <div class="store-section-heading">
+                <div>
+                    <p class="store-eyebrow">SELECCIÓN RUTIGYM</p>
+                    <h2 id="catalog-title">Tu kit, a tu manera.</h2>
+                </div>
+                <p>Elegí tus básicos, sumalos al carrito y armá tu pedido.</p>
+            </div>
+
+            <div class="store-toolbar">
+                <label class="store-search">
+                    <span class="visually-hidden">Buscar productos</span>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4 4"></path></svg>
+                    <input type="search" id="store-search" placeholder="Buscar en la tienda" autocomplete="off">
+                </label>
+                <div class="store-categories" role="group" aria-label="Filtrar por categoría">
+                    <button type="button" class="store-filter is-active" data-category="todos" aria-pressed="true">Todo</button>
+                    <button type="button" class="store-filter" data-category="accesorios" aria-pressed="false">Accesorios</button>
+                    <button type="button" class="store-filter" data-category="suplementos" aria-pressed="false">Suplementos</button>
+                    <button type="button" class="store-filter" data-category="indumentaria" aria-pressed="false">Indumentaria</button>
+                </div>
+                <a class="store-cart-shortcut" href="#carrito" aria-label="Ir al carrito, 0 productos">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 11.2a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 1.9-1.4L21 9H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg>
+                    <span>Carrito</span>
+                    <span class="store-cart-count" id="store-cart-count">0</span>
+                </a>
+            </div>
+
+            <p class="store-results" id="store-results" aria-live="polite"></p>
+
+            <div class="store-layout">
+                <div class="store-products" id="store-products" aria-live="polite"></div>
+
+                <aside class="store-cart" id="carrito" aria-labelledby="cart-title">
+                    <div class="store-cart-heading">
+                        <div>
+                            <p class="store-eyebrow">TU SELECCIÓN</p>
+                            <h2 id="cart-title">Tu carrito</h2>
+                        </div>
+                        <span id="cart-item-count">0 productos</span>
+                    </div>
+                    <div class="store-cart-items" id="store-cart-items">
+                        <p class="store-cart-empty">Todavía no agregaste productos. Cuando encuentres tus favoritos, van a aparecer acá.</p>
+                    </div>
+                    <div class="store-cart-totals">
+                        <p><span>Subtotal</span><strong id="cart-subtotal">$ 0</strong></p>
+                        <p><span>Envío</span><strong id="cart-shipping">A coordinar</strong></p>
+                        <p class="store-cart-total"><span>Total estimado (sin envío)</span><strong id="cart-total">$ 0</strong></p>
+                    </div>
+                    <p class="store-shipping-note">El envío no está incluido. En una compra real, se cotizaría aparte.</p>
+
+                    <form class="store-checkout" id="store-checkout" hidden>
+                        <h3>¿Seguimos?</h3>
+                        <p>Revisá los productos y confirmá para ver el resumen de tu pedido de muestra.</p>
+                        <button type="submit" class="store-checkout-button">Confirmar pedido de muestra</button>
+                    </form>
+
+                    <div class="store-order-confirmation" id="store-order-confirmation" role="status" aria-live="polite" hidden></div>
+                    <button class="store-clear-cart" id="store-clear-cart" type="button" hidden>Vaciar carrito</button>
+                    <p class="store-demo-note">Tienda de muestra: no pedimos tus datos y la confirmación no procesa pagos ni genera un envío real.</p>
+                </aside>
+            </div>
+
+            <p class="store-disclaimer">Los suplementos son opcionales y no reemplazan una alimentación variada. Revisá los ingredientes y consultá a un profesional de salud si tenés dudas sobre su consumo.</p>
+        </section>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <script src="../JS/footer.js"></script>
+    <script src="../JS/reveal-scroll.js"></script>
+    <script src="../JS/menu-usuario.js"></script>
+    <script src="../JS/tienda.js"></script>
+</body>
+</html>

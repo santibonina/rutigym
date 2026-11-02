@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafíos fitness - RutiGym</title>
+    <link rel="stylesheet" href="../CSS/estilos.css">
+    <link rel="stylesheet" href="../CSS/desafios.css">
+    <link rel="stylesheet" href="../CSS/diseno-nuevo.css">
+</head>
+<body>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-btn" role="button" tabindex="0" aria-label="Abrir menú" aria-expanded="false" aria-controls="sidebar"></label>
+    <label for="menu-toggle" class="overlay"></label>
+
+    <nav class="sidebar" id="sidebar" aria-label="Navegación principal">
+        <h3>Navegación</h3>
+        <a href="../index.html">Inicio</a>
+        <h3>Músculos</h3>
+        <a href="musculos/pecho.html">Pecho</a>
+        <a href="musculos/espalda.html">Espalda</a>
+        <a href="musculos/piernas.html">Piernas</a>
+        <a href="musculos/brazos.html">Brazos</a>
+        <h3>Rutinas</h3>
+        <input type="checkbox" id="rutinas-toggle" class="rutinas-toggle">
+        <label for="rutinas-toggle" class="rutinas-btn">Ver Rutinas</label>
+        <div class="rutinas-submenu">
+            <a href="rutinas-2dias.html" class="rutina-duracion">2 Días</a>
+            <a href="rutinas-3dias.html" class="rutina-duracion">3 Días</a>
+            <a href="rutinas-4dias.html" class="rutina-duracion">4 Días</a>
+            <a href="rutinas-5dias.html" class="rutina-duracion">5 Días</a>
+        </div>
+        <h3>Explorar</h3>
+        <a href="tienda.html">Tienda</a>
+        <a href="gimnasio.html">Ver gimnasios</a>
+        <h3>Tu progreso</h3>
+        <a href="seguimiento.html">Seguimiento personal</a>
+        <a href="desafios.html" aria-current="page">Desafíos fitness</a>
+    </nav>
+
+    <div class="usuario" role="button" tabindex="0" aria-label="Menú de usuario" aria-expanded="false" aria-haspopup="true" aria-controls="menu">
+        <svg class="user-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>
+    </div>
+    <div class="menu-usuario" id="menu">
+        <a href="iniciosesion.html">Iniciar Sesión</a>
+        <a href="registro.html">Registrarse</a>
+    </div>
+
+    <header class="nav">
+        <h1><a href="../index.html" class="logo-link">RUTIGYM</a></h1>
+    </header>
+
+    <main class="challenges-page">
+        <header class="challenges-hero">
+            <p class="challenge-eyebrow">CONSTANCIA ANTES QUE PERFECCIÓN</p>
+            <h1>Pequeños retos.<br><span>Grandes hábitos.</span></h1>
+            <p>Elegí un desafío que se adapte a vos, sumá avances a tu ritmo y celebrá cada meta cumplida.</p>
+            <div class="challenge-hero-mark" aria-hidden="true"><span>GO</span></div>
+            <a href="#challenge-board" class="challenge-hero-link">Explorar desafíos <span aria-hidden="true">↓</span></a>
+        </header>
+
+        <p class="challenge-error" id="challenge-error" role="alert" hidden></p>
+
+        <section class="challenge-access" id="challenge-access" aria-labelledby="challenge-access-title">
+            <p class="challenge-eyebrow">TU CAMINO, TU CUENTA</p>
+            <h2 id="challenge-access-title">Iniciá sesión para participar.</h2>
+            <p>Tus desafíos, avances e insignias se guardan por cuenta en este navegador.</p>
+            <div class="challenge-access-actions">
+                <a class="challenge-primary-link" href="iniciosesion.html?next=desafios.html">Iniciar sesión</a>
+                <a class="challenge-secondary-link" href="registro.html">Crear cuenta</a>
+            </div>
+        </section>
+
+        <div class="challenge-dashboard" id="challenge-dashboard" hidden>
+            <section class="challenge-welcome">
+                <div>
+                    <p class="challenge-eyebrow">HOLA, <span id="challenge-username"></span></p>
+                    <h2>¿Qué pequeño avance vas a hacer hoy?</h2>
+                </div>
+                <p id="challenge-today"></p>
+            </section>
+
+            <section class="challenge-section" id="challenge-board" aria-labelledby="challenge-board-title">
+                <div class="challenge-section-heading">
+                    <div>
+                        <p class="challenge-eyebrow">EMPEZÁ POR LO QUE TE MOTIVA</p>
+                        <h2 id="challenge-board-title">Tus desafíos</h2>
+                    </div>
+                    <span class="challenge-local-note">Personales · a tu ritmo</span>
+                </div>
+                <div class="challenge-grid" id="challenge-list"></div>
+                <p class="challenge-empty" id="challenge-empty" hidden>No hay desafíos disponibles por ahora.</p>
+            </section>
+
+            <section class="challenge-section saved-challenges-section" id="saved-challenges-section" aria-labelledby="saved-challenges-title" hidden>
+                <div class="challenge-section-heading">
+                    <div>
+                        <p class="challenge-eyebrow">PARA CUANDO TENGAS GANAS</p>
+                        <h2 id="saved-challenges-title">Retos guardados para después</h2>
+                    </div>
+                    <span class="challenge-local-note">Podés agregarlos de nuevo cuando quieras</span>
+                </div>
+                <div class="exercise-challenge-grid" id="saved-challenges-list"></div>
+            </section>
+
+            <section class="challenge-section" aria-labelledby="exercise-challenges-title">
+                <div class="challenge-section-heading">
+                    <div>
+                        <p class="challenge-eyebrow">ELEGÍ TU PRÓXIMO MOVIMIENTO</p>
+                        <h2 id="exercise-challenges-title">Retos de ejercicios</h2>
+                    </div>
+                    <span class="challenge-local-note">Metas acumulables en 7 días</span>
+                </div>
+                <p class="exercise-challenge-note">Adaptá cada ejercicio a tu nivel, dividí la meta en varias series y frená si sentís molestias.</p>
+                <div class="exercise-challenge-grid" id="exercise-challenge-list"></div>
+                <p class="challenge-feedback" id="exercise-feedback" role="status" aria-live="polite"></p>
+            </section>
+
+            <div class="challenge-tools-grid">
+                <section class="challenge-panel" aria-labelledby="level-title">
+                    <div class="challenge-panel-heading">
+                        <p class="challenge-eyebrow">UN RETO A TU MEDIDA</p>
+                        <h2 id="level-title">Elegí tu nivel</h2>
+                    </div>
+                    <p>Un objetivo semanal según el ritmo que quieras probar. Podés cambiar de nivel cuando termine.</p>
+                    <form class="challenge-inline-form" id="level-form">
+                        <label for="challenge-level">Nivel
+                            <select id="challenge-level" name="level">
+                                <option value="principiante">Principiante · 2 entrenamientos</option>
+                                <option value="intermedio">Intermedio · 4 entrenamientos</option>
+                                <option value="avanzado">Avanzado · 5 entrenamientos</option>
+                            </select>
+                        </label>
+                        <button type="submit" class="challenge-button">Empezar reto semanal</button>
+                    </form>
+                    <p class="challenge-feedback" id="level-feedback" role="status" aria-live="polite"></p>
+                </section>
+
+                <section class="challenge-panel" aria-labelledby="custom-title">
+                    <div class="challenge-panel-heading">
+                        <p class="challenge-eyebrow">TU META, TUS REGLAS</p>
+                        <h2 id="custom-title">Crear desafío personalizado</h2>
+                    </div>
+                    <p>Definí una meta sencilla y cuánto tiempo querés dedicarle.</p>
+                    <form class="challenge-custom-form" id="custom-form">
+                        <label for="custom-name">Nombre del desafío
+                            <input id="custom-name" name="name" type="text" maxlength="48" placeholder="Ej. Salir a caminar" required>
+                        </label>
+                        <div class="challenge-custom-fields">
+                            <label for="custom-target">Meta total
+                                <input id="custom-target" name="target" type="number" min="1" max="10000" step="1" placeholder="Ej. 5" required>
+                            </label>
+                            <label for="custom-unit">Unidad
+                                <select id="custom-unit" name="unit">
+                                    <option value="entrenamientos">entrenamientos</option>
+                                    <option value="minutos">minutos</option>
+                                    <option value="kilómetros">kilómetros</option>
+                                    <option value="repeticiones">repeticiones</option>
+                                </select>
+                            </label>
+                            <label for="custom-duration">Duración
+                                <select id="custom-duration" name="duration">
+                                    <option value="3">3 días</option>
+                                    <option value="7" selected>7 días</option>
+                                    <option value="14">14 días</option>
+                                    <option value="30">30 días</option>
+                                    <option value="60">60 días</option>
+                                    <option value="90">90 días</option>
+                                </select>
+                            </label>
+                        </div>
+                        <button type="submit" class="challenge-button">Crear mi desafío</button>
+                    </form>
+                    <p class="challenge-feedback" id="custom-feedback" role="status" aria-live="polite"></p>
+                </section>
+            </div>
+
+            <section class="challenge-section achievements-section" aria-labelledby="achievements-title">
+                <div class="challenge-section-heading">
+                    <div>
+                        <p class="challenge-eyebrow">CADA PASO CUENTA</p>
+                        <h2 id="achievements-title">Insignias y logros</h2>
+                    </div>
+                    <span class="challenge-achievement-count" id="achievement-count">0 logros</span>
+                </div>
+                <div class="achievement-grid" id="achievement-list"></div>
+                <p class="challenge-empty" id="achievement-empty">Completá un desafío para desbloquear tu primera insignia.</p>
+            </section>
+
+            <p class="challenge-privacy-note">El avance se registra manualmente y se guarda solo en este navegador, por cuenta. No hay competencia pública ni sincronización entre dispositivos. Elegí metas acordes a tu condición y descansá cuando lo necesites.</p>
+        </div>
+    </main>
+
+    <footer id="site-footer"></footer>
+    <script src="../JS/footer.js"></script>
+    <script src="../JS/reveal-scroll.js"></script>
+    <script src="../JS/menu-usuario.js"></script>
+    <script src="../JS/desafios.js"></script>
+</body>
+</html>
